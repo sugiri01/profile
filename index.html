@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Profile - Frontal Designs, EdAthena & Hackbees</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        @media print {
+            @page {
+                size: A4 landscape;
+            }
+            body {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+            .no-break {
+                page-break-inside: avoid;
+            }
+            .preserve-colors {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        /* Force background colors and gradients in PDF */
+        .pdf-bg-gradient {
+            background: linear-gradient(to right, #2563eb, #7c3aed) !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .pdf-card {
+            break-inside: avoid;
+            page-break-inside: avoid;
+            background-color: white !important;
+            border: 1px solid #e5e7eb !important;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+            margin-bottom: 1rem !important;
+        }
+
+        .pdf-section {
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Main Document Container -->
+    <div id="pdf-content" class="container mx-auto max-w-7xl bg-white shadow-xl my-8">
+        <!-- Header -->
+        <div class="pdf-bg-gradient text-white p-12 rounded-t-lg preserve-colors no-break">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl font-bold mb-4">Technology & Innovation Portfolio</h1>
+                <p class="text-xl opacity-90">Frontal Designs • EdAthena • Hackbees</p>
+            </div>
+        </div>
+
+        <!-- Content Sections -->
+        <div class="p-8">
+            <!-- About Section -->
+            <section class="mb-12 pdf-section">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 pb-2 border-b-2 border-gray-200">About Our Companies</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Frontal Designs -->
+                    <div class="pdf-card p-6 rounded-lg preserve-colors" style="background: linear-gradient(to bottom right, #EFF6FF, white);">
+                        <h3 class="text-2xl font-bold text-blue-600 mb-4">Frontal Designs</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            A full-service software development firm focused on delivering modern front-end and back-end solutions. Frontal Designs specializes in HTML, CSS, React.js, and Node.js, with a commitment to high-quality, scalable solutions tailored to each client’s needs.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li>Front-End Development: Creating responsive and interactive UIs using modern frameworks.</li>
+                            <li>Back-End Development: Building scalable, secure server-side applications with Node.js.</li>
+                            <li>Database Management: Expertise in MySQL, MongoDB, and PostgreSQL.</li>
+                        </ul>
+                    </div>
+
+                    <!-- EdAthena -->
+                    <div class="pdf-card p-6 rounded-lg preserve-colors" style="background: linear-gradient(to bottom right, #ECFDF5, white);">
+                        <h3 class="text-2xl font-bold text-green-600 mb-4">EdAthena</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            EdAthena is an AI and tech education pioneer, providing comprehensive learning programs in AI, machine learning, and data science. Our mission is to empower tech enthusiasts and professionals with cutting-edge knowledge.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li>AI & ML Courses: Structured curriculum in AI and data science for all skill levels.</li>
+                            <li>Expert Mentorship: Access to guidance from industry professionals and AI specialists.</li>
+                            <li>Flexible Learning: Self-paced and instructor-led options tailored to learner needs.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Hackbees -->
+                    <div class="pdf-card p-6 rounded-lg preserve-colors" style="background: linear-gradient(to bottom right, #F5F3FF, white);">
+                        <h3 class="text-2xl font-bold text-purple-600 mb-4">Hackbees</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            Hackbees is an innovative platform hosting hackathons and coding challenges focused on AI and tech development. It fosters creativity and collaboration among developers, offering a unique environment to experiment and learn.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li>Hackathons: Engaging events to inspire innovative AI and tech solutions.</li>
+                            <li>Collaborative Challenges: Focused problem-solving tasks that promote teamwork.</li>
+                            <li>Talent Recognition: Opportunities to showcase skills to industry leaders.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section class="mb-12 pdf-section">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 pb-2 border-b-2 border-gray-200">Our Services</h2>
+                
+                <!-- Development Services -->
+                <div class="mb-8 no-break">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-4">Development Services</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="pdf-card p-6 rounded-lg">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2">React.js Development</h4>
+                            <p class="text-gray-600 mb-2">We build dynamic, responsive interfaces using React.js to ensure seamless user experiences across all devices.</p>
+                            <ul class="list-disc list-inside text-gray-700">
+                                <li>Single-Page Applications</li>
+                                <li>React Native for mobile platforms</li>
+                                <li>Custom component development</li>
+                            </ul>
+                        </div>
+                        <div class="pdf-card p-6 rounded-lg">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2">Node.js Solutions</h4>
+                            <p class="text-gray-600 mb-2">Scalable and efficient server-side solutions with Node.js, optimized for performance and security.</p>
+                            <ul class="list-disc list-inside text-gray-700">
+                                <li>Real-time data processing</li>
+                                <li>API development and integration</li>
+                                <li>Server and database optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Services -->
+                <div class="mb-8 no-break">
+                    <h3 class="text-2xl font-bold text-green-600 mb-4">Education Services</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="pdf-card p-6 rounded-lg">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2">AI & ML Courses</h4>
+                            <p class="text-gray-600 mb-2">Comprehensive learning paths in artificial intelligence, designed to meet industry needs and prepare learners for real-world applications.</p>
+                            <ul class="list-disc list-inside text-gray-700">
+                                <li>Beginner to advanced AI programs</li>
+                                <li>Project-based learning</li>
+                                <li>Career-oriented curriculum</li>
+                            </ul>
+                        </div>
+                        <div class="pdf-card p-6 rounded-lg">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2">Expert Mentorship</h4>
+                            <p class="text-gray-600 mb-2">Guidance from seasoned industry experts who provide personalized mentorship and support.</p>
+                            <ul class="list-disc list-inside text-gray-700">
+                                <li>One-on-one mentorship</li>
+                                <li>Career advice and portfolio development</li>
+                                <li>Access to industry insights</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Innovation Services -->
+                <div class="mb-8 no-break">
+                    <h3 class="text-2xl font-bold text-purple-600 mb-4">Innovation Services</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="pdf-card p-6 rounded-lg">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2">Hackathons</h4>
+                            <p class="text-gray-600 mb-2">Organizing hackathons that foster creativity, innovation, and collaboration across AI and tech fields.</p>
+                            <ul class="list-disc list-inside text-gray-700">
+                                <li>Industry-relevant challenges</li>
+                                <li>Networking with tech professionals</li>
+                                <li>Prizes and career opportunities</li>
+                            </ul>
+                        </div>
+                        <div class="pdf-card p-6 rounded-lg">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2">ML Solutions</h4>
+                            <p class="text-gray-600 mb-2">Custom machine learning models tailored to business needs, driving data-driven insights and solutions.</p>
+                            <ul class="list-disc list-inside text-gray-700">
+                                <li>Data-driven decision support</li>
+                                <li>Image and text analysis</li>
+                                <li>Predictive analytics and automation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white p-8 rounded-b-lg preserve-colors pdf-section">
+            <div class="text-center">
+                <p>&copy; 2024 All rights reserved.</p>
+                <p class="mt-2 text-gray-400">Frontal Designs • EdAthena • Hackbees</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function generatePDF() {
+            const element = document.getElementById('pdf-content');
+            const opt = {
+                margin: [15, 15],
+                filename: 'company-profile.pdf',
+                image: { type: 'jpeg', quality: 1 },
+                html2canvas: { 
+                    scale: 2,
+                    useCORS: true,
+                    logging: true,
+                    letterRendering: true,
+                    imageTimeout: 0,
+                    removeContainer: true,
+                },
+                jsPDF: { 
+                    unit: 'mm', 
+                    format: 'a4', 
+                    orientation: 'landscape',
+                    compress: false
+                }
+            };
+
+            html2pdf().set(opt).from(element).save().catch(err => console.log(err));
+        }
+    </script>
+</body>
+</html>
